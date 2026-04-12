@@ -1,0 +1,16 @@
+<div class="nav">
+  <a href="/home">Shopzy</a>
+
+  <div class="search">
+    <input id="searchInput" placeholder="Search products…" />
+  </div>
+
+  <div>
+    <a href="/home">Home</a>
+    <% if (user && user.role === "admin") { %>
+      | <a href="/products/add">Add Product</a>
+    <% } %>
+    | <a href="/cart">🛒 Cart</a>
+    | <a href="/logout">Logout</a>
+  </div>
+</div>

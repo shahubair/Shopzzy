@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body>
+
+  <%- include("../partials/navbar", { user }) %>
+
+  <div class="container">
+    <h2>Your Cart</h2>
+
+    <% if (!cart || !cart.items || cart.items.length === 0) { %>
+      <p class="muted">Your cart is empty.</p>
+    <% } else { %>
+
+      <% cart.items.forEach(item => { %>
+        <div class="card" style="margin-bottom:16px;">
+
+          <% if (item.image) { %>
+            <img src="<%= item.image %>" style="width:120px;" />
+          <% } %>
+
+          <div><strong><%= item.title %></strong></div>
+          <div>Quantity: <%= item.qty %></div>
+          <div class="price">₹<%= item.price * item.qty %></div>
+
+          <a
+            href="/cart/remove/<%= item.productId %>"
+            style="color:#f87171;"
+          >
+            Remove
+          </a>
+
+        </div>
+      <% }) %>
+
+      <hr />
+
+      <p><strong>Total Items:</strong> <%= cart.totalQty %></p>
+      <p><strong>Total Price:</strong> ₹<%= cart.totalPrice %></p>
+
+    <% } %>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Shopzy</title>
+  <link rel="stylesheet" href="/css/theme.css" />
+</head>
+<body>
+
+  <div class="container" style="max-width:420px;margin-top:80px;">
+
+    <h2 style="margin-bottom:20px;">Welcome Back</h2>
+
+    <!-- ❗ FORM ERROR MESSAGE -->
+    <% if (error) { %>
+      <p style="color:#ff4d4f;font-size:13px;margin-bottom:12px;">
+        <%= error %>
+      </p>
+    <% } %>
+
+    <form method="POST" action="/login">
+
+      <div style="margin-bottom:14px;">
+        <input
+          name="email"
+          placeholder="Email"
+          required
+          style="
+            width:100%;
+            padding:10px;
+            border-radius:8px;
+            border:1px solid #2a2a5a;
+            background:#0f0f1f;
+            color:#eaeaf0;
+          "
+        />
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <input
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+          style="
+            width:100%;
+            padding:10px;
+            border-radius:8px;
+            border:1px solid #2a2a5a;
+            background:#0f0f1f;
+            color:#eaeaf0;
+          "
+        />
+      </div>
+
+      <button
+        type="submit"
+        style="
+          width:100%;
+          padding:12px;
+          border:none;
+          border-radius:10px;
+          background:#7c3aed;
+          color:white;
+          font-size:16px;
+          font-weight:600;
+          cursor:pointer;
+        "
+      >
+        Login
+      </button>
+
+    </form>
+
+    <p class="muted" style="margin-top:12px;">
+      <a href="/forgot-password">Forgot password?</a>
+    </p>
+
+    <p class="muted" style="margin-top:16px;">
+      Don’t have an account?
+      <a href="/signup">Signup</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
