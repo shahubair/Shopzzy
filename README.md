@@ -7,4 +7,4 @@ Email Services: Built-in OTP (One-Time Password) system via Nodemailer for signu
 
 Cart Logic: Session-based shopping cart management.
 
-Database: Document-oriented storage using MongoDB and Mongoose.
+Database: Document-oriented storage using MongoDB and Mongoose
