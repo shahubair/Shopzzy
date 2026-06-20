@@ -1,4 +1,4 @@
-🛠️ Features
+🛠️ Features (it uses graphql as api)
 Server-Side Rendering: Powered by EJS for dynamic content delivery.
 
 Authentication: Full Login/Signup flow with Bcrypt password hashing and JWT service integration.
